@@ -13,3 +13,7 @@ MovBundle\Entity\Photos:
             type: string
             length: 255
     lifecycleCallbacks: {  }
+    oneToMany:
+        comments:
+          targetEntity: MovBundle\Entity\Commentaires
+          mappedBy: texte

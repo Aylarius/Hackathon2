@@ -93,35 +93,4 @@ class Photos
     {
         return $this->comments;
     }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add comment
-     *
-     * @param \MovBundle\Entity\Commentaires $comment
-     *
-     * @return Photos
-     */
-    public function addComment(\MovBundle\Entity\Commentaires $comment)
-    {
-        $this->comments[] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Remove comment
-     *
-     * @param \MovBundle\Entity\Commentaires $comment
-     */
-    public function removeComment(\MovBundle\Entity\Commentaires $comment)
-    {
-        $this->comments->removeElement($comment);
-    }
 }
