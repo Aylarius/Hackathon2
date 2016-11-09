@@ -12,4 +12,5 @@ MovBundle\Entity\Photos:
         iname:
             type: string
             length: 255
+
     lifecycleCallbacks: {  }
