@@ -1,3 +1,11 @@
-mov_homepage:
+homepage:
     path:     /
-    defaults: { _controller: MovBundle:Default:index }
+    defaults: { _controller: MovBundle:Moza:index }
+
+upload:
+    path:     /upload
+    defaults: { _controller: MovBundle:Upload:new }
+
+map:
+    path:     /map
+    defaults: { _controller: MovBundle:Map:index }
