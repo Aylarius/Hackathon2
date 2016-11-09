@@ -9,7 +9,10 @@ MovBundle\Entity\Commentaires:
             generator:
                 strategy: AUTO
     fields:
-        texte:
-            type: string
-            length: 255
+        created_at:
+            type: datetime
     lifecycleCallbacks: {  }
+    manyToOne:
+        texte:
+            targetEntity: MovBundle\Entity\Photos
+            inversedBy: comments
