@@ -19,8 +19,20 @@ class Photos
      */
     private $iname;
 
+    private $image;
 
-    /**
+    public function setImage ()
+    {
+        $this->image = $image;
+        return $this;
+    }
+
+    public function getImage ()
+    {
+        return $this->image;
+    }
+
+        /**
      * Get id
      *
      * @return integer 

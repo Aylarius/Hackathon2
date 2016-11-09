@@ -1,0 +1,4 @@
+MovBundle\Entity\Photos:
+    image:
+        mapping: images
+        filename_property: iname
