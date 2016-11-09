@@ -1,0 +1,15 @@
+MovBundle\Entity\Photos:
+    type: entity
+    table: null
+    repositoryClass: MovBundle\Repository\PhotosRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        iname:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

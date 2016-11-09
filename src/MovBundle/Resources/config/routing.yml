@@ -1,0 +1,3 @@
+mov_homepage:
+    path:     /
+    defaults: { _controller: MovBundle:Default:index }
