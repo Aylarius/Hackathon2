@@ -12,7 +12,8 @@ MovBundle\Entity\Photos:
         iname:
             type: string
             length: 255
-
+        updated:
+            type: datetime
     lifecycleCallbacks: {  }
     oneToMany:
         comments:

@@ -124,4 +124,33 @@ class Photos
     {
         $this->comments->removeElement($comment);
     }
+    /**
+     * @var \DateTime
+     */
+    private $updated;
+
+
+    /**
+     * Set updated
+     *
+     * @param \DateTime $updated
+     *
+     * @return Photos
+     */
+    public function setUpdated($updated)
+    {
+        $this->updated = $updated;
+
+        return $this;
+    }
+
+    /**
+     * Get updated
+     *
+     * @return \DateTime
+     */
+    public function getUpdated()
+    {
+        return $this->updated;
+    }
 }
