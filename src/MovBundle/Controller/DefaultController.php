@@ -8,6 +8,6 @@ class DefaultController extends Controller
 {
     public function indexAction()
     {
-        return $this->render('@Mov/moza.html.twig');
+        return $this->render('MovBundle::moza.html.twig');
     }
 }

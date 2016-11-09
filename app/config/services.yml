@@ -10,4 +10,4 @@ services:
 
     app.provider.oauth:
         class: AppBundle\Entity\Provider
-        arguments: [@fos_user.user_manager,{facebook: facebookID}]
+        arguments: [@fos_user.user_manager,{facebook: facebook_id, google: google_id, twitter: twitter_id}]

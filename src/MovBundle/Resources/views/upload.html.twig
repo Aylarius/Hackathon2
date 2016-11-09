@@ -1,4 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <h1>Publier une nouvelle photo</h1>
+    <div class="col-xs-12">
+        <div class="thumbnail">
+            <div class="caption">
+                {{ form_start(new) }}
+                {{ form_errors(new.image) }}
+                {{ form_widget(new.image) }}
+                <br><br>
+                <input type="submit" value="Publier" />
+                {{ form_end(new) }}
+            </div>
+        </div>
+    </div>
+
 {% endblock %}

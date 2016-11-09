@@ -6,7 +6,6 @@
 </head>
 <body>
 
-PROUT
 {% if app.request.hasPreviousSession %}
     {% for type, messages in app.session.flashbag.all() %}
         {% for message in messages %}
@@ -17,8 +16,18 @@ PROUT
     {% endfor %}
 {% endif %}
 
-
-<a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}"> <span>Facebook</span> </a>
+<br>
+<a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}">
+    <span>Facebook</span>
+</a>
+<br><br>
+<a href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}">
+    <span>Google</span>
+</a>
+<br><br>
+<a href="{{ path('hwi_oauth_service_redirect', {'service': 'twitter' }) }}">
+    <span>Twitter</span>
+</a>
 
 <div>
     {% block fos_user_content %}

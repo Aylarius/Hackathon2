@@ -87,6 +87,18 @@ hwi_oauth:
                 email: email
             options:
                 display: page
+        google:
+            type:                google
+            client_id:           908317112772-pdofeou104nnfrnhdrfahn3unem7g0kg.apps.googleusercontent.com
+            client_secret:       R_D9kY-IjZvWm-reFrHOhj9v
+            scope:              "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"
+            paths:
+                email: email
+        twitter:
+            type:                twitter
+            client_id:           PjE7ascDrJa4X5obWJAQc226F
+            client_secret:       I3vF4DL7rNuZYd2C0ZTJcr0Lgi6KhXokfewsbU62RHK2n17mWd
+            scope:              ""
 
 vich_uploader:
     db_driver: orm

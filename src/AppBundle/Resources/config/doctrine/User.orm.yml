@@ -6,3 +6,13 @@ AppBundle\Entity\User:
             type: integer
             generator:
                 strategy: AUTO
+    fields:
+        facebook_id:
+            type: string
+            nullable: true
+        google_id:
+            type: string
+            nullable: true
+        twitter_id:
+            type: string
+            nullable: true

@@ -43,6 +43,8 @@ security:
             oauth:
                 resource_owners:
                     facebook:           "/connect/check-facebook"
+                    google:             "/connect/check-google"
+                    twitter:            "/connect/check-twitter"
                 login_path:        /connect
                 failure_path:      /connect
 

@@ -34,6 +34,12 @@ class Provider extends BaseClass
                 case 'facebook':
                     $user->setFacebookID($socialID);
                     break;
+                case 'google':
+                    $user->setGoogleId($socialID);
+                    break;
+                case 'twitter':
+                    $user->setTwitterId($socialID);
+                    break;
             }
             $this->userManager->updateUser($user);
         } else {

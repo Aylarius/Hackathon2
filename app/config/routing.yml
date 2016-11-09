@@ -20,6 +20,3 @@ hwi_oauth_login:
 hwi_oauth_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
     prefix: /connect
-
-facebook_login:
-    path: /connect/check-facebook
