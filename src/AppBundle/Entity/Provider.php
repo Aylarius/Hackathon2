@@ -6,8 +6,9 @@ use HWI\Bundle\OAuthBundle\Security\Core\User\FOSUBUserProvider as BaseClass;
 use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\User\UserChecker;
 use Symfony\Component\Security\Core\User\UserInterface;
+use HWI\Bundle\OAuthBundle\Security\Core\User\OAuthAwareUserProviderInterface;
 
-class OAuthUserProvider extends BaseClass
+class Provider extends BaseClass
 {
 
     public function loadUserByOAuthUserResponse(UserResponseInterface $response)

@@ -22,4 +22,4 @@ hwi_oauth_redirect:
     prefix: /connect
 
 facebook_login:
-    prefix: /connect/check-facebook
+    path: /connect/check-facebook

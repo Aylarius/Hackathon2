@@ -9,5 +9,5 @@ services:
 #        arguments: ["@another_service_name", "plain_value", "%parameter_name%"]
 
     app.provider.oauth:
-        class: AppBundle\Entity\User
+        class: AppBundle\Entity\Provider
         arguments: [@fos_user.user_manager,{facebook: facebookID}]
