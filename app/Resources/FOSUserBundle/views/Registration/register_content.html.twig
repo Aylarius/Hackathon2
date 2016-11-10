@@ -25,20 +25,28 @@
 </header>
 
 <main class="container-fluid">
-    <div class="row">
+    <div class="row" style="text-align: center;">
         <div class="col-xs-12">
             {% block body %}
 
                 {% trans_default_domain 'FOSUserBundle' %}
-                <h1>Prout</h1>
+                <h1>S'inscrire</h1>
                 {{ form_start(form, {'method': 'post', 'action': path('homepage'), 'attr': {'class': 'fos_user_registration_register'}}) }}
-                    {{ form_widget(form) }}
+                    <div class="form-group">
+                        {{ form_widget(form) }}
+                    </div>
+                    <br>
                 <div>
-                    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+                    <input type="submit" value="{{ 'registration.submit'|trans }}" id="register-button"/>
                 </div>
                 {{ form_end(form) }}
 
-                <a href="{{ path('fos_user_security_login') }}">Se connecter</a>
+
+                <br><br>
+                <div class="text-center">
+                    <p>Vous avez déjà un compte ? <a href="{{ path('fos_user_security_login') }}">Connectez-vous</a></p>
+                </div>
+                <br>
             {% endblock %}
         </div>
     </div>
