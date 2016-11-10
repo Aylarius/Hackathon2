@@ -54,4 +54,33 @@ class Commentaires
         return $this->texte;
     }
 
+    /**
+     * @var integer
+     */
+    private $photo_id;
+
+
+    /**
+     * Set photoId
+     *
+     * @param integer $photoId
+     *
+     * @return Commentaires
+     */
+    public function setPhoto_id($photoId)
+    {
+        $this->photo_id = $photoId;
+
+        return $this;
+    }
+
+    /**
+     * Get photoId
+     *
+     * @return integer
+     */
+    public function getPhoto_id()
+    {
+        return $this->photo_id;
+    }
 }

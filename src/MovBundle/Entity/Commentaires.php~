@@ -10,9 +10,6 @@ use Doctrine\ORM\Mapping as ORM;
 class Commentaires
 {
 
-
-
-
     /**
      * @var int
      */
@@ -57,33 +54,4 @@ class Commentaires
         return $this->texte;
     }
 
-    /**
-     * @var integer
-     */
-    private $photos_id;
-
-
-    /**
-     * Set photosId
-     *
-     * @param integer $photosId
-     *
-     * @return Commentaires
-     */
-    public function setPhotosId($photosId)
-    {
-        $this->photos_id = $photosId;
-
-        return $this;
-    }
-
-    /**
-     * Get photosId
-     *
-     * @return integer
-     */
-    public function getPhotosId()
-    {
-        return $this->photos_id;
-    }
 }

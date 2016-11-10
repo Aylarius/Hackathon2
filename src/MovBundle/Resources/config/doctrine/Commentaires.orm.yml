@@ -12,4 +12,6 @@ MovBundle\Entity\Commentaires:
         texte:
             type: string
             length: 255
+        photo_id:
+            type: integer
     lifecycleCallbacks: {  }

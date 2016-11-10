@@ -10,11 +10,6 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Photos
 {
-    public function __toString()
-    {
-        return $this->comments;
-    }
-
     /**
      * @var int
      */
@@ -101,69 +96,5 @@ class Photos
     {
         return $this->updated;
     }
-
-
-
-    /**
-     * @var \MovBundle\Entity\Commentaires
-     */
-    public $comments;
-
-
-    /**
-     * Set comments
-     *
-     * @param string $comments
-     *
-     * @return Photos
-     */
-    public function setComments($comments)
-    {
-        $this->comments = $comments;
-
-        return $this;
-    }
-
-    /**
-     * Get comments
-     *
-     * @return string
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
-
-
-
-    public function __construct()
-    {
-        $this->comments = new ArrayCollection();
-    }
-
-    /**
-     * Add comment
-     *
-     * @param \MovBundle\Entity\Photos $comment
-     *
-     * @return Photos
-     */
-    public function addComment(\MovBundle\Entity\Photos $comment)
-    {
-        $this->comments[] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Remove comment
-     *
-     * @param \MovBundle\Entity\Photos $comment
-     */
-    public function removeComment(\MovBundle\Entity\Photos $comment)
-    {
-        $this->comments->removeElement($comment);
-    }
-
 
 }

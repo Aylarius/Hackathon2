@@ -40,7 +40,12 @@ hr {
 .commentaires {
     margin-bottom: 10px;
 }
-
+.commentaires p {
+    text-align: justify;
+}
+.form-com {
+    margin-top: 0px !important;
+}
 button.close{
     position: absolute;
     right:10px;
@@ -49,7 +54,12 @@ button.close{
     opacity: 0.6;
     margin-bottom: 20px;
     margin-top: 20px;
-    box-shadow: inherit;
+    box-shadow: none;
+}
+
+#logo{
+    margin-right: 70px;
+    margin-left: 70px;
 }
 
 #upload-icon {
@@ -129,8 +139,9 @@ button a {
 
 .social-buttons {
     list-style: none;
-    padding: 0;
+    padding: 10px;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 .social-buttons li {
     display: inline-block;

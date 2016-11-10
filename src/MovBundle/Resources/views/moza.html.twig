@@ -20,15 +20,21 @@
                         <br>
                         <div class="ratings"></div>
                         <br>
+                        {% for commentaire in commentaires if photo.id == commentaire.photo_id %}
                         <div class="thumbnail commentaires">
-                            <p>Très belle moustache !</p>
+                            <p>{{ commentaire.texte }}</p>
                         </div>
-                        <div class="thumbnail commentaires">
-                            <p>Wahou !</p>
-                        </div>
-                        <div class="thumbnail commentaires">
-                            <p>Impressionnant cette moustache dis donc</p>
-                        </div>
+                        {% endfor %}
+                            <div class="thumbnail">
+                                <div class="caption">
+                                    {{ form_start(new, {'attr': {'class': 'form-com'}}) }}
+                                    {{ form_errors(new) }}
+                                    <br>
+                                    {{ form_end(new) }}
+                                    <input type="submit" value="Publier" />
+                                </div>
+                            </div>
+
                         <ul class="social-buttons cf">
                             <li>
                                 <a href="http://twitter.com/share" class="socialite twitter-share" data-text="Socialite.js" data-url="{{ app.request.getUri }}" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
