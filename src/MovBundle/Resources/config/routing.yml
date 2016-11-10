@@ -9,3 +9,11 @@ upload:
 map:
     path:     /map
     defaults: { _controller: MovBundle:Map:index }
+
+homepage_sendMail:
+    path: /sendMail
+    defaults: {_controller: MovBundle:Default:sendMail }
+
+patrimoine_mail:
+    path: /mail
+    defaults: {_controller: MovBundle:Default:mail }
