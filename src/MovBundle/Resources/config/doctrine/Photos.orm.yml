@@ -14,4 +14,15 @@ MovBundle\Entity\Photos:
             length: 255
         updated:
             type: datetime
+        adresse:
+            type: string
+            length: 255
+        lgt:
+            type: string
+            length: 255
+            nullable: TRUE
+        lat:
+            type: string
+            length: 255
+            nullable: TRUE
     lifecycleCallbacks: {  }

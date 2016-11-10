@@ -31,4 +31,5 @@ class MapController extends Controller
             'photos' => $photos,
         ));
     }
+
 }
