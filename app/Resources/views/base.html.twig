@@ -14,13 +14,13 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid" id="container-nav">
                 <ul class="nav navbar-nav center-block">
-                    <li><a href="#"><i class="fa fa-upload"></i></a></li>
-                    <li><a href="#">
+                    <li><a href="{{ path('upload') }}"><i class="fa fa-upload"></i></a></li>
+                    <li><a href="{{ path('homepage') }}">
                             <h1>Movember</h1>
                             <img src="{{ asset('bundles/mov/img/mustache.png') }}" alt="" width="70px" />
                         </a>
                      </li>
-                    <li><a href="#"><i class="fa fa-street-view"></i></a></li>
+                    <li><a href="{{ path('map') }}"><i class="fa fa-street-view"></i></a></li>
                 </ul>
         </div><!-- /.container-fluid -->
     </nav>
@@ -34,15 +34,16 @@
     </div>
 </main>
 
-</body>
-
 <!--********** FOOTER **********-->
 <footer>
     <p class="container">Copyright© 2016</p>
 </footer>
 <!--************* SCRIPTS ***************-->
-<script src="https://use.fontawesome.com/f0f4368368.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% block script %}
+    <script src="https://use.fontawesome.com/f0f4368368.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+{% endblock %}
 
+</body>
 </html>
