@@ -5,6 +5,7 @@ namespace MovBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 
 class PhotosType extends AbstractType
 {
@@ -20,7 +21,9 @@ class PhotosType extends AbstractType
                 'required' => false,
                 'allow_delete' => false, // not mandatory, default is true
                 'download_link' => false, // not mandatory, default is true
-            ));
+            ))
+            ->add('adresse', TextType::class);
+        ;
     }
 
     /**

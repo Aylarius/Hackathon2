@@ -26,7 +26,10 @@
                 {{ form_start(new) }}
                 {{ form_errors(new.image) }}
                 {{ form_widget(new.image) }}
-                <br><br>
+                <br>
+                {{ form_errors(new.adresse) }}
+                {{ form_widget(new.adresse) }}
+                <br>
                 <input type="submit" value="Publier" />
                 {{ form_end(new) }}
             </div>
@@ -34,3 +37,4 @@
     </div>
 
 {% endblock %}
+

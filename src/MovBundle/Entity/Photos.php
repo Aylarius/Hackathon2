@@ -96,5 +96,89 @@ class Photos
     {
         return $this->updated;
     }
+    /**
+     * @var string
+     */
+    private $lgt;
+
+    /**
+     * @var string
+     */
+    private $lat;
+
+
+    /**
+     * Set lgt
+     *
+     * @param string $lgt
+     * @return Map
+     */
+    public function setLgt($lgt)
+    {
+        $this->lgt = $lgt;
+
+        return $this;
+    }
+
+    /**
+     * Get lgt
+     *
+     * @return string
+     */
+    public function getLgt()
+    {
+        return $this->lgt;
+    }
+
+    /**
+     * Set lat
+     *
+     * @param string $lat
+     * @return Map
+     */
+    public function setLat($lat)
+    {
+        $this->lat = $lat;
+
+        return $this;
+    }
+
+    /**
+     * Get lat
+     *
+     * @return string
+     */
+    public function getLat()
+    {
+        return $this->lat;
+    }
+    /**
+    *@var string
+     */
+    
+    private $adresse;
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     * @return Map
+     */
+    public function setadresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
+    }
+
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getadresse()
+    {
+        return $this->adresse;
+    }
 
 }
