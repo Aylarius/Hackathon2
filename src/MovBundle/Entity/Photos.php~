@@ -10,11 +10,6 @@ use Doctrine\Common\Collections\ArrayCollection;
  */
 class Photos
 {
-    public function __toString()
-    {
-        return $this->comments;
-    }
-
     /**
      * @var int
      */
@@ -101,69 +96,89 @@ class Photos
     {
         return $this->updated;
     }
+    /**
+     * @var string
+     */
+    private $lgt;
 
+    /**
+     * @var string
+     */
+    private $lat;
 
 
     /**
-     * @var \MovBundle\Entity\Commentaires
-     */
-    public $comments;
-
-
-    /**
-     * Set comments
+     * Set lgt
      *
-     * @param string $comments
-     *
-     * @return Photos
+     * @param string $lgt
+     * @return Map
      */
-    public function setComments($comments)
+    public function setLgt($lgt)
     {
-        $this->comments = $comments;
+        $this->lgt = $lgt;
 
         return $this;
     }
 
     /**
-     * Get comments
+     * Get lgt
      *
      * @return string
      */
-    public function getComments()
+    public function getLgt()
     {
-        return $this->comments;
-    }
-
-
-
-    public function __construct()
-    {
-        $this->comments = new ArrayCollection();
+        return $this->lgt;
     }
 
     /**
-     * Add comment
+     * Set lat
      *
-     * @param \MovBundle\Entity\Photos $comment
-     *
-     * @return Photos
+     * @param string $lat
+     * @return Map
      */
-    public function addComment(\MovBundle\Entity\Photos $comment)
+    public function setLat($lat)
     {
-        $this->comments[] = $comment;
+        $this->lat = $lat;
 
         return $this;
     }
 
     /**
-     * Remove comment
+     * Get lat
      *
-     * @param \MovBundle\Entity\Photos $comment
+     * @return string
      */
-    public function removeComment(\MovBundle\Entity\Photos $comment)
+    public function getLat()
     {
-        $this->comments->removeElement($comment);
+        return $this->lat;
+    }
+    /**
+    *@var string
+     */
+    
+    private $adresse;
+
+    /**
+     * Set adresse
+     *
+     * @param string $adresse
+     * @return Map
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+
+        return $this;
     }
 
+    /**
+     * Get adresse
+     *
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
 
 }
