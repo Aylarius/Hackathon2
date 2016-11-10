@@ -104,7 +104,7 @@ vich_uploader:
     db_driver: orm
     mappings:
         images:
-            uri_prefix: hackathon/Hackathon2/images
+            uri_prefix: /images
             upload_destination: '%kernel.root_dir%/../web/images'
             inject_on_load: false
             delete_on_update: true
