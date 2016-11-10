@@ -2,6 +2,7 @@
 
 {% block body %}
 <br><br>
+    <h2>La moustache... le ketchup aussi</h2>
     {% for photo in photos %}
         <div class="col-xs-6 col-md-4 no-pad">
             <a data-toggle="modal" data-target="{{ '#' ~ photo.id }}">
@@ -20,14 +21,25 @@
                         <div class="ratings"></div>
                         <br>
                         <div class="thumbnail commentaires">
-                            <p>Ceci est un super commentaire de ouf</p>
+                            <p>Très belle moustache !</p>
                         </div>
                         <div class="thumbnail commentaires">
-                            <p>Ceci est un super commentaire de ouf</p>
+                            <p>Wahou !</p>
                         </div>
                         <div class="thumbnail commentaires">
-                            <p>Ceci est un super commentaire de ouf</p>
+                            <p>Impressionnant cette moustache dis donc</p>
                         </div>
+                        <ul class="social-buttons cf">
+                            <li>
+                                <a href="http://twitter.com/share" class="socialite twitter-share" data-text="Socialite.js" data-url="{{ app.request.getUri }}" data-count="vertical" rel="nofollow" target="_blank"><span class="vhidden">Share on Twitter</span></a>
+                            </li>
+                            <li>
+                                <a href="https://plus.google.com/share?url={{ app.request.getUri }}" class="socialite googleplus-one" data-size="tall" data-href="{{ app.request.getUri }}" rel="nofollow" target="_blank"><span class="vhidden">Share on Google+</span></a>
+                            </li>
+                            <li>
+                                <a href="http://www.facebook.com/sharer.php?u={{ app.request.getUri }}" class="socialite facebook-like" data-href="{{ app.request.getUri }}" data-send="false" data-layout="box_count" data-width="60" data-show-faces="false" rel="nofollow" target="_blank"><span class="vhidden">Share on Facebook</span></a>
+                            </li>
+                        </ul>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -35,6 +47,18 @@
         
     {% endfor %}
 
+    {% block script %}
+        <script src="https://use.fontawesome.com/f0f4368368.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="{{ asset('bundles/mov/js/socialite/socialite.js') }}"></script>
+
+        <script>
+            $(document).ready(function() {
+                Socialite.load();
+            });
+        </script>
+    {% endblock %}
 
 
 {% endblock %}

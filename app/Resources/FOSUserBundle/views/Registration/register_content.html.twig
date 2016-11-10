@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<!--*************** HEAD ***************-->
+<head>
+    <meta charset="utf-8"/>
+    <title>{% block title %}Movember{% endblock %}</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="{{ asset('bundles/mov/css/style.css') }}"/>
+</head>
+<body>
+
+<header>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid" id="container-nav">
+            <ul class="nav navbar-nav center-block">
+                <li><a href="#">
+                        <h1>Movember</h1>
+                        <img src="{{ asset('bundles/mov/img/mustache.png') }}" alt="" width="70px" />
+                    </a>
+                </li>
+            </ul>
+        </div><!-- /.container-fluid -->
+    </nav>
+</header>
+
+<main class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12">
+            {% block body %}
+
+                {% trans_default_domain 'FOSUserBundle' %}
+                <h1>Prout</h1>
+                {{ form_start(form, {'method': 'post', 'action': path('homepage'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+                    {{ form_widget(form) }}
+                <div>
+                    <input type="submit" value="{{ 'registration.submit'|trans }}" />
+                </div>
+                {{ form_end(form) }}
+
+                <a href="{{ path('fos_user_security_login') }}">Se connecter</a>
+            {% endblock %}
+        </div>
+    </div>
+</main>
+
+</body>
+
+<!--********** FOOTER **********-->
+<footer>
+    <p class="container">Copyright© 2016</p>
+</footer>
+<!--************* SCRIPTS ***************-->
+<script src="https://use.fontawesome.com/f0f4368368.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</html>

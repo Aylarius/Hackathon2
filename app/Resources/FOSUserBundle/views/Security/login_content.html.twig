@@ -14,13 +14,11 @@
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid" id="container-nav">
             <ul class="nav navbar-nav center-block">
-                <li><a href="#"><i class="fa fa-upload"></i></a></li>
                 <li><a href="#">
                         <h1>Movember</h1>
                         <img src="{{ asset('bundles/mov/img/mustache.png') }}" alt="" width="70px" />
                     </a>
                 </li>
-                <li><a href="#"><i class="fa fa-street-view"></i></a></li>
             </ul>
         </div><!-- /.container-fluid -->
     </nav>
@@ -59,11 +57,11 @@
                 </div>
                 <br>
                 <div class="social">
-                    <button type="button" class="google-button"><a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}">Facebook</a></button>
-                    <button type="button" class="facebook-button"><a href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}">Google</a></button>
+                    <button type="button" class="facebook-button"><a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}">Facebook</a></button>
+                    <button type="button" class="google-button"><a href="{{ path('hwi_oauth_service_redirect', {'service': 'google' }) }}">Google</a></button>
                     <button type="button" class="twitter-button"><a href="{{ path('hwi_oauth_service_redirect', {'service': 'twitter' }) }}">Twitter</a></button>
                 </div>
-
+                <a href="{{ path('fos_user_registration_register') }}">S'inscrire</a>
             {% endblock %}
         </div>
     </div>
