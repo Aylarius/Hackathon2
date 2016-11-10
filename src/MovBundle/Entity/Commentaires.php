@@ -9,27 +9,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Commentaires
 {
-    public function __toString()
-    {
-        return $this->texte;
-    }
-
-    protected $createdAt;
-
-    public function __construct()
-    {
-    $this->createdAt = new \DateTime('now');
-    }
-
-    public function setCreatedAt($createdAt)
-    {
-    $this->createdAt = $createdAt;
-    }
-
-    public function getCreatedAt()
-    {
-    return $this->createdAt;
-    }
 
     /**
      * @var int
@@ -74,10 +53,5 @@ class Commentaires
     {
         return $this->texte;
     }
-    /**
-     * @var \DateTime
-     */
-    private $created_at;
-
 
 }

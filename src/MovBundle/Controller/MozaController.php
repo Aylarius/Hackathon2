@@ -7,42 +7,40 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use MovBundle\Entity\Photos;
 use MovBundle\Entity\Commentaires;
-
-/**
- * Photos controller.
- *
- */
+use MovBundle\Form\CommentairesType;
 
 class MozaController extends Controller
 {
-    /**
-     * Lists all Photos and Commentaires entities.
-     *
-     */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-        $photos = $em->getRepository('MovBundle:Photos')->findAll();
-        $comEm = $this->getDoctrine()->getManager();
-        $comments = $comEm->getRepository('MovBundle:Commentaires')->findAll();
+        /*$em = $this->getDoctrine()->getEntityManager();
+        $photos = $em->getRepository('MovBundle:Photos')->find($photos_id);
+        $IDphoto = $this->getPhoto($photos_id);
 
-        /* Formulaire Nouveau Commentaire */
         $commentaire = new Commentaires();
-        $new = $this->createForm('MovBundle\Form\CommentairesType', $commentaire);
+        $commentaire->setPhotoId($IDphoto);
+        $new = $this->createForm(new CommentairesType(), $commentaire);
         $new->handleRequest($request);
-        
+
         if ($new->isSubmitted() && $new->isValid()) {
             $cEm = $this->getDoctrine()->getManager();
             $cEm->persist($commentaire);
             $cEm->flush();
 
             return $this->redirectToRoute('homepage');
-        }
-        
+        }*/
+
+        $em = $this->getDoctrine()->getManager();
+        $photos = $em->getRepository('MovBundle:Photos')->findAll();
+        $comEm = $this->getDoctrine()->getManager();
+        $commentaires = $comEm->getRepository('MovBundle:Commentaires')->findAll();
+
         return $this->render('MovBundle::moza.html.twig', array(
-            'comments' => $comments,
-            'comment' => $comment,
             'photos' => $photos,
+            'commentaires' => $commentaires,
+            /*'new' => $new->createView(),*/
         ));
     }
+
+
 }

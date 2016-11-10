@@ -3,6 +3,7 @@
 namespace MovBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Photos
@@ -19,15 +20,15 @@ class Photos
      */
     private $iname;
 
-    private $image;
+    public $image;
 
-    public function setImage ()
+    public function setImage($image)
     {
         $this->image = $image;
         return $this;
     }
 
-    public function getImage ()
+    public function getImage()
     {
         return $this->image;
     }
@@ -64,66 +65,8 @@ class Photos
     {
         return $this->iname;
     }
-    /**
-     * @var \MovBundle\Entity\Commentaires
-     */
-    private $comments;
 
 
-    /**
-     * Set comments
-     *
-     * @param \MovBundle\Entity\Commentaires $comments
-     *
-     * @return Photos
-     */
-    public function setComments(\MovBundle\Entity\Commentaires $comments = null)
-    {
-        $this->comments = $comments;
-
-        return $this;
-    }
-
-    /**
-     * Get comments
-     *
-     * @return \MovBundle\Entity\Commentaires
-     */
-    public function getComments()
-    {
-        return $this->comments;
-    }
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->comments = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Add comment
-     *
-     * @param \MovBundle\Entity\Commentaires $comment
-     *
-     * @return Photos
-     */
-    public function addComment(\MovBundle\Entity\Commentaires $comment)
-    {
-        $this->comments[] = $comment;
-
-        return $this;
-    }
-
-    /**
-     * Remove comment
-     *
-     * @param \MovBundle\Entity\Commentaires $comment
-     */
-    public function removeComment(\MovBundle\Entity\Commentaires $comment)
-    {
-        $this->comments->removeElement($comment);
-    }
     /**
      * @var \DateTime
      */
@@ -153,4 +96,5 @@ class Photos
     {
         return $this->updated;
     }
+
 }

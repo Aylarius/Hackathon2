@@ -1,12 +1,14 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<br><br>
+    {% for photo in photos %}
+        {{ dump(photo.iname) }}
 
-    {% for photo in photos|reverse %}
         <div class="col-xs-4">
             <a id="btn-photo" data-toggle="modal" data-target="{{ '#' ~ photo.id }}">
                 <div class="thumbnail" id="thumbnail-membre">
-                    <div class="image" style="background-image: url({{ vich_uploader_asset(photo, 'image', 'ClubBundle\\Entity\\Photos') }})"></div>
+                    <div class="image" style="background-image: url({{ vich_uploader_asset(photo, 'image', 'MovBundle\\Entity\\Photos') }})"></div>
                 </div>
             </a>
         </div>
@@ -15,14 +17,14 @@
                 <div class="modal-content">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
                     <div class="modal-body">
-                        <img src="{{ vich_uploader_asset(photo, 'image', 'ClubBundle\\Entity\\Photos') }}"></div>
-                        {% for comment in comments|reverse %}
-                            <p>{{ comment.texte }}</p>
-                        {% endfor %}
+                        <img src="{{ vich_uploader_asset(photo, 'image', 'MovBundle\\Entity\\Photos') }}"></div>
                     </div>
                 </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
+        
     {% endfor %}
+
+
 
 {% endblock %}

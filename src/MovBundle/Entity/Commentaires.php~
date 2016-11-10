@@ -9,27 +9,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Commentaires
 {
-    public function __toString()
-    {
-        return $this->texte;
-    }
 
-    protected $createdAt;
 
-    public function __construct()
-    {
-    $this->createdAt = new \DateTime('now');
-    }
 
-    public function setCreatedAt($createdAt)
-    {
-    $this->createdAt = $createdAt;
-    }
-
-    public function getCreatedAt()
-    {
-    return $this->createdAt;
-    }
 
     /**
      * @var int
@@ -74,10 +56,34 @@ class Commentaires
     {
         return $this->texte;
     }
+
     /**
-     * @var \DateTime
+     * @var integer
      */
-    private $created_at;
+    private $photos_id;
 
 
+    /**
+     * Set photosId
+     *
+     * @param integer $photosId
+     *
+     * @return Commentaires
+     */
+    public function setPhotosId($photosId)
+    {
+        $this->photos_id = $photosId;
+
+        return $this;
+    }
+
+    /**
+     * Get photosId
+     *
+     * @return integer
+     */
+    public function getPhotosId()
+    {
+        return $this->photos_id;
+    }
 }

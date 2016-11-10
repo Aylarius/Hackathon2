@@ -15,7 +15,3 @@ MovBundle\Entity\Photos:
         updated:
             type: datetime
     lifecycleCallbacks: {  }
-    oneToMany:
-        comments:
-          targetEntity: MovBundle\Entity\Commentaires
-          mappedBy: texte

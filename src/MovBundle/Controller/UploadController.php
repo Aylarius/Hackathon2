@@ -22,10 +22,6 @@ class UploadController extends Controller
      */
     public function newAction(Request $request)
     {
-
-        $em = $this->getDoctrine()->getManager();
-        $photos = $em->getRepository('MovBundle:Photos')->findAll();
-
         /* Formulaire Nouvelle Photo */
         $photo = new Photos();
         $new = $this->createForm('MovBundle\Form\PhotosType', $photo);
@@ -42,10 +38,10 @@ class UploadController extends Controller
             return $this->redirectToRoute('homepage');
         }
 
-        return $this->render('MovBundle::moza.html.twig', array(
-            'photos' => $photos,
+        return $this->render('MovBundle::upload.html.twig', array(
             'photo' => $photo,
             'new' => $new->createView(),
         ));
     }
+
 }
