@@ -10,8 +10,6 @@ fos_user:
     resource: "@FOSUserBundle/Resources/config/routing/all.xml"
 
 
-
-
 # HWIOAuthBundle
 hwi_oauth_login:
     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
@@ -20,3 +18,10 @@ hwi_oauth_login:
 hwi_oauth_redirect:
     resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
     prefix: /connect
+
+fos_comment_api:
+    type: rest
+    resource: "@FOSCommentBundle/Resources/config/routing.yml"
+    prefix: /api
+    defaults: { _format: html }
+

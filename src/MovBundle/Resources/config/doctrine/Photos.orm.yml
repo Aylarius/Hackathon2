@@ -14,4 +14,10 @@ MovBundle\Entity\Photos:
             length: 255
         updated:
             type: datetime
+
+    oneToMany:
+        image:
+            targetEntity: FOS\CommentBundle\Entity\Comment
+            mappedBy: image
+
     lifecycleCallbacks: {  }

@@ -1,0 +1,15 @@
+MovBundle\Entity\Comment:
+    type: entity
+    table: null
+    repositoryClass: MovBundle\Repository\CommentRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        thread:
+            type: string
+            length: 255
+    lifecycleCallbacks: {  }

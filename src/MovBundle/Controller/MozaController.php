@@ -33,11 +33,12 @@ class MozaController extends Controller
         $em = $this->getDoctrine()->getManager();
         $photos = $em->getRepository('MovBundle:Photos')->findAll();
         $comEm = $this->getDoctrine()->getManager();
-        $commentaires = $comEm->getRepository('MovBundle:Commentaires')->findAll();
+        $comment = $comEm->getRepository('MovBundle:Comment')->findAll();
 
-        return $this->render('MovBundle::moza.html.twig', array(
+        return $this->render('@Mov/Thread/async.html.twig', array(
             'photos' => $photos,
-            'commentaires' => $commentaires,
+            'comment' => $comment
+
             /*'new' => $new->createView(),*/
         ));
     }
