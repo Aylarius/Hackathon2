@@ -4,7 +4,6 @@ namespace MovBundle\Controller;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use MovBundle\Controller\MapController;
 
 use MovBundle\Entity\Photos;
 use MovBundle\Entity\Map;
@@ -32,12 +31,26 @@ class UploadController extends Controller
 
         if ($new->isValid()) {
             $photo->setUpdated(new \DateTime());
-        }
-        if ($new->isSubmitted() && $new->isValid()) {
             $url = "https://maps.google.com/maps/api/geocode/json?address=" . $photo->getadresse() . "&key=AIzaSyD1U5cXo-xZ-tC3UWLnfYzXg0wO18RQI8A";
 
+            function file_get_contents_curl($url) {
+
+                $ch = curl_init();
+
+                curl_setopt( $ch, CURLOPT_AUTOREFERER, TRUE );
+                curl_setopt( $ch, CURLOPT_HEADER, 0 );
+                curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+                curl_setopt( $ch, CURLOPT_URL, $url );
+                curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, TRUE );
+
+                $data = curl_exec( $ch );
+                curl_close( $ch );
+
+                return $data;
+
+            }
             // get the json response
-            $resp_json = file_get_contents($url);
+            $resp_json = file_get_contents_curl($url);
 
             // decode the json
             $resp = json_decode($resp_json, true);
@@ -47,13 +60,15 @@ class UploadController extends Controller
                 // get the important data
                 $lati = $resp['results'][0]['geometry']['location']['lat'];
                 $longi = $resp['results'][0]['geometry']['location']['lng'];
-                
+
                 // verify if data is complete
                 if ($lati && $longi) {
                     $photo->setLat($lati);
                     $photo->setLgt($longi);
                 }
             }
+        }
+        if ($new->isSubmitted() && $new->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($photo);
             $em->flush();
@@ -64,6 +79,23 @@ class UploadController extends Controller
             'photo' => $photo,
             'new' => $new->createView(),
         ));
+
+    }
+
+    public function file_get_contents_curl( $url ) {
+
+        $ch = curl_init();
+
+        curl_setopt( $ch, CURLOPT_AUTOREFERER, TRUE );
+        curl_setopt( $ch, CURLOPT_HEADER, 0 );
+        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
+        curl_setopt( $ch, CURLOPT_URL, $url );
+        curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, TRUE );
+
+        $data = curl_exec( $ch );
+        curl_close( $ch );
+
+        return $data;
 
     }
 
