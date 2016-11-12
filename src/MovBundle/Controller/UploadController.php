@@ -6,9 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use MovBundle\Entity\Photos;
-use MovBundle\Entity\Map;
 use MovBundle\Form\PhotosType;
-use MovBundle\Form\MapType;
 
 
 /**
@@ -29,26 +27,23 @@ class UploadController extends Controller
         $new = $this->createForm('MovBundle\Form\PhotosType', $photo);
         $new->handleRequest($request);
 
+        function file_get_contents_curl($url)
+        {
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_AUTOREFERER, TRUE);
+            curl_setopt($ch, CURLOPT_HEADER, 0);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_FOLLOWLOCATION, TRUE);
+            $data = curl_exec($ch);
+            curl_close($ch);
+
+            return $data;
+        }
+
         if ($new->isValid()) {
             $photo->setUpdated(new \DateTime());
             $url = "https://maps.google.com/maps/api/geocode/json?address=" . $photo->getadresse() . "&key=AIzaSyD1U5cXo-xZ-tC3UWLnfYzXg0wO18RQI8A";
-
-            function file_get_contents_curl($url) {
-
-                $ch = curl_init();
-
-                curl_setopt( $ch, CURLOPT_AUTOREFERER, TRUE );
-                curl_setopt( $ch, CURLOPT_HEADER, 0 );
-                curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
-                curl_setopt( $ch, CURLOPT_URL, $url );
-                curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, TRUE );
-
-                $data = curl_exec( $ch );
-                curl_close( $ch );
-
-                return $data;
-
-            }
             // get the json response
             $resp_json = file_get_contents_curl($url);
 
@@ -79,23 +74,6 @@ class UploadController extends Controller
             'photo' => $photo,
             'new' => $new->createView(),
         ));
-
-    }
-
-    public function file_get_contents_curl( $url ) {
-
-        $ch = curl_init();
-
-        curl_setopt( $ch, CURLOPT_AUTOREFERER, TRUE );
-        curl_setopt( $ch, CURLOPT_HEADER, 0 );
-        curl_setopt( $ch, CURLOPT_RETURNTRANSFER, 1 );
-        curl_setopt( $ch, CURLOPT_URL, $url );
-        curl_setopt( $ch, CURLOPT_FOLLOWLOCATION, TRUE );
-
-        $data = curl_exec( $ch );
-        curl_close( $ch );
-
-        return $data;
 
     }
 
