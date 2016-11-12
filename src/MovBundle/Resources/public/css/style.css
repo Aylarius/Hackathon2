@@ -131,11 +131,7 @@ input#_submit, input[type=submit]{
 button a {
     color: white;
 }
-#map div {
-    height: 400px !important;
-    width:  inherit !important;
-    position: relative !important;
-}
+
 
 .social-buttons {
     list-style: none;
@@ -196,6 +192,10 @@ a {
 
 i {
     color: white;
+}
+#map {
+    height: 400px;
+    width: 100%;
 }
 
 /**************************/
