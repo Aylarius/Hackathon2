@@ -1,6 +1,6 @@
 Hackathon2 - Application Movember
 ==============
-Application Symfony2 (version 2.8) créée pour la mise en place du site internet du Club de L'Opinion.
+Projet Symfony2 (version 2.8) créé pour la mise en place d'une application pour le mouvement Movember permettant de publier et localiser des photos des plus belles moustaches.
 
 ## Pré-requis
 
