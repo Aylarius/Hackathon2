@@ -87,4 +87,4 @@ Vous pourrez donc accéder au site en utilisant l'URL indiqué et il faudra chan
 2. Il vous est ensuite demandé d'indiquer un email et un mot de passe pour votre super administrateur  
   
 3. Pour accéder à la partie administrable du site, ajouter `/login` à l'URL, exemple :
-`localhost/clubdelopinion/web/login`
+`localhost/hackathon2/web/login`
